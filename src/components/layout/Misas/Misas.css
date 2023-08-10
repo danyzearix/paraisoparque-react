@@ -1,0 +1,36 @@
+/* Misas.css */
+
+.misas-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.misas-heading {
+  color: #085423;
+}
+
+.misas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.misas-table th,
+.misas-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.misas-table th {
+  background-color: #085423;
+  color: white;
+}
+
+.misas-table td {
+  color: #085423;
+}
+
+.misas-table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}

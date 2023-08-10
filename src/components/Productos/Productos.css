@@ -1,0 +1,84 @@
+.productos {
+    
+    text-align: center;
+  }
+  
+  .productos-header {
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/rosesbackground.jpg') no-repeat center center;
+    background-size: cover;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .productos-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajusta la opacidad aquí */
+  }
+  
+  .productos-title {
+    color: white;
+    z-index: 1;
+  }
+
+  .productos-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    gap: 50px; /* Espacio entre los elementos */
+    margin: 50px 0
+  }
+  
+  .text-section {
+    flex: 1; /* Ocupa todo el espacio restante */
+    text-align: start;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+  
+  .image-section {
+  border-radius: 50%; /* Borded redondeado */
+  overflow: hidden;  /* Fija el tamaño a 400px */
+  height: 320px;
+  }
+  
+  .product-image {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    font-size: 2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .paragraph {
+    margin-bottom: 10px;
+  }
+  
+  .icon {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+.paragraphIdent{
+    margin-left: 8%;
+    margin-top: 5%;
+}
+  

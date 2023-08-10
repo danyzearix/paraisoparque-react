@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import logo from "../../../assets/logo-web.png"
 import "./NavBar.css"
 
@@ -11,11 +12,13 @@ function NavBar() {
 
         <div className='nav-menu'>
             <ul className='lista-menu'>
-                <li>INICIO</li>
-                <li>PRODUCTOS Y SERVICIOS</li>
-                <li>OBITUARIOS</li>
-                <li>MISAS</li>
-                <li>TIENDA</li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="/productos">Productos</Link></li>
+            <li><Link to="/servicios">Servicios</Link></li>
+            <li><Link to="/ObituariosGenerales">Obituarios</Link></li>
+            <li><Link to="https://paraisocementerio.a2hosted.com/misas-y-eventos">Misas y Reservas</Link></li>
+
+           
             </ul>
         </div>
     </div>
