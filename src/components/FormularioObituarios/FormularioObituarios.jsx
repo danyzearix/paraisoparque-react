@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import "./FormularioObituarios.css"
+
 
 const FormularioObituarios = () => {
   const [formData, setFormData] = useState({
@@ -40,7 +41,8 @@ const FormularioObituarios = () => {
   };
 
   return (
-    <div className='formContainer'>
+
+<div className='formContainer'>
       <h2 className="text-center">OBITUARIOS</h2>
       <form id="funeraria-form" className="mt-5" onSubmit={handleSubmit}>
         <div className="form-group">

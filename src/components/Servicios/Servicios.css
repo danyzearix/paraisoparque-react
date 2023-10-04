@@ -33,10 +33,10 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 90%;
     width: 100%;
     gap: 50px; /* Espacio entre los elementos */
-    margin: 50px 0
+    margin: 15% 0
   }
   
   .text-section {
@@ -74,11 +74,21 @@
   }
   
   .icon {
-    display: inline-block;
+    margin-right: 10px;
+    width: 64px;
     margin-right: 10px;
   }
 
 .paragraphIdent{
     margin-left: 8%;
     margin-top: 5%;
+}
+
+.asesoriaContainer{
+  display: flex;
+  align-items: center;
+}
+
+.servicesList{
+  margin: 5% 10%;
 }

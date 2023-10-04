@@ -4,7 +4,7 @@
   }
   
   .productos-header {
-    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/rosesbackground.jpg') no-repeat center center;
+    background: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/10/AdobeStock_259369090.jpeg') no-repeat center center;
     background-size: cover;
     height: 450px;
     display: flex;
@@ -31,11 +31,11 @@
   .productos-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     max-width: 1200px;
     width: 100%;
     gap: 50px; /* Espacio entre los elementos */
-    margin: 50px 0
+    margin: 10% 0
   }
   
   .text-section {
@@ -57,9 +57,11 @@
     object-fit: cover;
   }
   
-  .title {
+  .title_Productos {
     font-size: 2.5em;
+    font-weight: 600;
     margin-bottom: 20px;
+    color:#085423
   }
   
   .subtitle {
@@ -70,6 +72,7 @@
   
   .paragraph {
     margin-bottom: 10px;
+    font-size: 20px;
   }
   
   .icon {
@@ -81,4 +84,45 @@
     margin-left: 8%;
     margin-top: 5%;
 }
+
+/* styles.css */
+
+.cotizar-button {
+  text-align: center;
+  background-color: #085423;
+  border: none;
+  color: white;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 5%;
+  margin-left: 8%;
+}
+
+.cotizar-button:hover {
+  background-color: #616161;
+  
+}
+
+.cotizar-button svg {
+  margin-right: 8px;
+}
+
+.productosButton{
+  padding: 20px 30px;
+  background-color: #085423;
+  border: none ;
+  border-radius: 15px;
+  color: white;
+  margin-left: 42%;
+  margin-top: 5%;
+
+
+}
+ .productosButton:hover{
+  background-color: #085423;
+  scale: 1.05;
+ }
   

@@ -35,7 +35,7 @@ const formattedDate = bogotaTime.toLocaleString(DateTime.DATE_FULL);
 
     <div className="obituariosGeneral">
       <div className="obituariosGeneral-header">
-        <h1 className="obituariosGeneral-title">Obituarios del día</h1>
+        <h1 className="obituariosGeneral-title">Obituarios</h1>
       </div>
 
       <div className="containerMainObi">
@@ -46,7 +46,7 @@ const formattedDate = bogotaTime.toLocaleString(DateTime.DATE_FULL);
     </div>
 
       <div className='ObiturariosTitle'>
-        <h1 className='genericTtitle'>Obituarios Generales</h1>
+        <h1 className='genericTtitle'>Servicios del día</h1>
         <img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/Memorial-Service.png" width={52} alt="" />
     </div>
     

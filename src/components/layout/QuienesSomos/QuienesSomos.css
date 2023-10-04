@@ -28,6 +28,7 @@
 
 .QuienesSomosContainer{
     margin-top: 10%;
+    margin-bottom: 10%;
 }
 
 .galeria-container {
@@ -58,7 +59,7 @@
   .grid-itemDos img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Añadimos esta propiedad para ajustar la imagen sin distorsión */
+    object-fit: cover; /* Añadimos esta propiedad para ajustar la imagen sin distorsión */
   }
   
   

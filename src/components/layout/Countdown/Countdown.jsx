@@ -39,7 +39,7 @@ const Countdown = () => {
     <div className="padre">
       <div className="hijo">
         <h2>Próximo evento:</h2>
-        <p>Dia del padre</p>
+        <p>Dia de los difuntos</p>
       </div>
       <div className="hijo">
         <h1>{dias < 10 ? `0${dias}` : dias}</h1>

@@ -236,3 +236,7 @@ hr.gradient {
     justify-content: center;
   }
 
+.productImg:hover{
+  transform: scale(1.1);
+}
+

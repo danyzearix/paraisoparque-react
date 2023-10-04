@@ -9,6 +9,10 @@ import CalendarGeneral from '../CalendarGeneral/CalendarGeneral';
 import Obituarios from '../Obituarios/Obituarios';
 import Misas from '../Misas/Misas';
 import QuienesSomos from '../QuienesSomos/QuienesSomos';
+import Testimonios from '../Testimonios/Testimonios';
+import Titulo from '../Titulo/Titulo';
+import Visitanos from '../Visitanos/Visitanos';
+import BannerCorreos from '../BannerCorreos/BannerCorreos';
 
 const Welcome = () => {
 
@@ -167,6 +171,10 @@ const Welcome = () => {
       <Obituarios></Obituarios>
       <Misas></Misas>
       <QuienesSomos></QuienesSomos>
+      <Titulo texto="Testimonios" />
+      <Testimonios></Testimonios>
+      <Visitanos></Visitanos>
+      <BannerCorreos></BannerCorreos>
 
     
     </Fragment>

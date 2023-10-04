@@ -24,14 +24,14 @@ const QuienesSomos = () => {
 
       <div className="galeria-container"> {/* Agregamos la clase CSS al contenedor */}
       <div className="grid-containerDos">
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/DJI_0501.webp" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/DSC02179.png" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/DSC02224.webp" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2022/09/Diseno-sin-titulo-24.jpg" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/DSC02244.webp" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/Diseno-sin-titulo-8.jpg" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/Diseno-sin-titulo-1.jpg" alt="" srcset="" /></div>
-        <div className="grid-itemDos"><img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/IMG_5375-scaled.jpg" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria4_2.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria3.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria2.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria1.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria8_2.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria7_2.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria6_2.webp" alt="" srcset="" /></div>
+        <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria5.webp" alt="" srcset="" /></div>
       </div>
     </div>
 

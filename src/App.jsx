@@ -10,6 +10,7 @@ import Productos from './components/Productos/Productos';
 import Servicios from './components/Servicios/Servicios';
 import FormularioObituarios from './components/FormularioObituarios/FormularioObituarios';
 import ObituariosGenerales from './components/ObituariosGenerales/ObituariosGenerales';
+import Footer from './components/layout/Footer/Footer';
 
 
 const slides = [
@@ -27,7 +28,7 @@ const slides = [
   },
   {
     image: 'https://elparaisoparquecementerio.com.co/wp-content/uploads/2022/09/Diseno-sin-titulo-26-1.jpg',
-    title: 'Adquiere tu póliza de vida',
+    title: 'Adquiere tu plan de previsión exequial',
     subtitle: 'Creamos una solución para brindar seguridad a ti y tu familía',
     button: 'Conocer más'
   },
@@ -56,6 +57,7 @@ function App() {
         <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
 
       </Routes>
+      <Footer></Footer>
     </Router>
   )
 }
