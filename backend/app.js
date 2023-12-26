@@ -17,7 +17,7 @@ connectDB();
 // Permitir solicitudes desde cualquier origen
 app.use(cors());
 // O permitir solicitudes solo desde el origen específico donde se encuentra tu aplicación React
-app.use(cors({ origin: 'https://www.elparaisoparquecementerio.com/' }));
+app.use(cors({ origin: 'https://paraisoparque-react-dev-arte.3.us-1.fl0.io'}));
 // Parsear el cuerpo de las solicitudes a JSON
 app.use(bodyParser.json());
 

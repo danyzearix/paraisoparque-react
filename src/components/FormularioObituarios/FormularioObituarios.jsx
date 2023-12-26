@@ -28,7 +28,7 @@ const handleSubmit = async (event) => {
   event.preventDefault();
 
     // Hacer la solicitud POST a la ruta protegida en la API
-    axios.post('https://elparaisoparquecementerio.com/api/upload', formData)
+    axios.post('https://paraisoparque-react-dev-arte.3.us-1.fl0.io/api/upload', formData)
       .then(response => {
         console.log('Obituario guardado:', response.data);
         // Restablecer el formulario después de guardar exitosamente
