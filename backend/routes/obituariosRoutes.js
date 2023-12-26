@@ -4,6 +4,7 @@ import {obtenerObituarios, guardarObituarios} from "../controllers/obituariosCon
 
 //Obtener datos 
 router.get("/", obtenerObituarios);
+//Guardar obituarios individual
 router.post("/", guardarObituarios);
 
 export default router;

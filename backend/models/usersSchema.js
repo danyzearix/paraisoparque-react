@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 //Crear el modelo para el usuario
-const userSchema = new mongoose.Schema({
+const usuariosSchema = new mongoose.Schema({
     nombre: {
       type: String,
       required: true
@@ -17,4 +17,6 @@ const userSchema = new mongoose.Schema({
     }
   });
   
-  const User = mongoose.model('User', userSchema);
+  const Usuarios = mongoose.model('Usuarios', usuariosSchema);
+
+  export default Usuarios;
