@@ -60,14 +60,18 @@ function Misas() {
   }, []);
 
   return (
+    <Fragment>
+    <div className='misasTitle1'><h1 className='genericTtitle'>MISAS</h1>
+    </div>
     <div className="misas-container">
-      <h1 className="misas-heading">Misas Programadas</h1>
+      <div className='container-misas'>
+      
       <table className="misas-table">
         <thead>
           <tr>
-            <th>Fecha</th>
+            <th className='fecha'>Fecha</th>
             <th>Nombre</th>
-            <th>Hora</th>
+            <th className='hora'>Hora</th>
           </tr>
         </thead>
         <tbody>
@@ -80,7 +84,14 @@ function Misas() {
           ))}
         </tbody>
       </table>
+      </div>
+      
+
+      <div class="image-container-misas">
+        <img src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2022/09/Diseno-sin-titulo-23-300x300.jpg" alt="Descripción de la imagen"/>
+      </div>
     </div>
+    </Fragment>
   );
 }
 

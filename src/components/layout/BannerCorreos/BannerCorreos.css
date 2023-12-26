@@ -47,3 +47,16 @@
     color: black;
   }
   
+  @media screen and (max-width: 768px) {
+    /* ... Tus otros estilos para el media query ... */
+  .banner-correos-container{
+    flex-direction: column;
+    padding: 30% 0;
+    background-color: rgba(0, 0, 0, 0.685);
+  }
+
+  .banner-column{
+    padding: 5% 0;
+  }
+
+}

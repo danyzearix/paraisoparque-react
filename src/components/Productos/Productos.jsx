@@ -13,7 +13,7 @@ const Productos = () => {
       </div>
       <div className="productos">
       <div className="productos-content">
-        <div className="text-section">
+        <div className="text-section" id="cenizarios">
           <h1 className="title_Productos">Cenizarios en Capilla</h1>
           <p className="paragraph">Espacio en madera, con capacidad para albergar desde 1 a 4 cenizas, en propiedad a perpetuidad con tapa en cristal ubicados en el sótano de la capilla, con placa memorial y asistencia religiosa durante el servicio de inhumación de las cenizas.</p>
           <a href="https://wa.link/lno0xh"><button className='productosButton'> Más información 📲 </button></a>
@@ -26,7 +26,7 @@ const Productos = () => {
 
       <div className="productos-content">
         <div className="text-section">
-          <h1 className="title_Productos">Cenizarios en Muro</h1>
+          <h1 className="title_Productos" id='cenizarios-muro'>Cenizarios en Muro</h1>
           <p className="paragraph">Espacio en muro a un costado de la sección de bóvedas, con capacidad para albergar 1 ó 2 cenizas, o unidades familiares para albergar hasta 8 cenizas en propiedad a perpetuidad. Placa memorial en mármol y asistencia religiosa durante el servicio de inhumación de las cenizas.</p>
           <a href="https://wa.link/lno0xh"><button className='productosButton'> Más información 📲 </button></a>
         </div>
@@ -37,8 +37,8 @@ const Productos = () => {
     </div>
 
     <div className="productos-content">
-        <div className="text-section">
-          <h1 className="title_Productos">Osarios en Muro</h1>
+        <div className="text-section" id='osarios-muro'>
+          <h1 className="title_Productos" >Osarios en Muro</h1>
           <p className="paragraph">Espacio en muro a un costado de la sección de bóvedas, con capacidad para albergar un unos (1) restos humanos ó dos cenizas en propiedad a perpetuidad, placa memorial en mármol y asistencia religiosa durante el servicio de inhumación de los restos ó cenizas</p>
           <a href="https://wa.link/lno0xh"><button className='productosButton'> Más información 📲 </button></a>
         </div>

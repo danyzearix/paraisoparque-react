@@ -32,6 +32,7 @@
     background-color: #6EC1E4;
     color: white;
     font-weight: 600;
+    font-size: medium;
 }
 
  .bi-telephone-inbound-fill{
@@ -41,4 +42,11 @@
 
 .bi-coin{
     color: white;
+}
+
+@media (max-width: 769px) {
+    /* Estos estilos se aplicarán en pantallas de 769px de ancho o más */
+    .header-container{
+        display: none;
+    }
 }

@@ -76,3 +76,24 @@
     color: #085423;
 }
 
+@media screen and (max-width: 768px) {
+  /* ... Tus otros estilos para el media query ... */
+
+  .ObituariosSubcontainer{
+    flex-direction: column;
+  }
+
+  .izquierdaObi{
+    width: 100%;
+  }
+
+  .container-hijo{
+    text-align: center;
+  }
+
+  .grid{
+    grid-template-columns: none;
+  }
+
+}
+

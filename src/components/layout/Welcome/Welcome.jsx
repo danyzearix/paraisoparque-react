@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import withScrollAnimation from '../../hoc/withScrollAnimation'; 
 import imagen from '../../../../public/welcome.webp';
 import icono1 from '../../../../public/urna.png';
 import icono2 from '../../../../public/lotes.png';
@@ -7,14 +9,48 @@ import { Fragment } from 'react';
 import ImageAccordion from '../Imageacordion/Imageacordion';
 import CalendarGeneral from '../CalendarGeneral/CalendarGeneral';
 import Obituarios from '../Obituarios/Obituarios';
+import ServiciosDia from '../../ServiciosDia/ServiciosDia';
 import Misas from '../Misas/Misas';
 import QuienesSomos from '../QuienesSomos/QuienesSomos';
 import Testimonios from '../Testimonios/Testimonios';
 import Titulo from '../Titulo/Titulo';
 import Visitanos from '../Visitanos/Visitanos';
 import BannerCorreos from '../BannerCorreos/BannerCorreos';
+import ContactComponent from '../Contacto/ContactComponent';
+import { motion } from 'framer-motion';
+
+const AnimatedObituarios = withScrollAnimation(Obituarios);
+const AnimatedMisas = withScrollAnimation(Misas);
+const AnimatedQuienesSomos = withScrollAnimation(QuienesSomos);
+const AnimatedTestimonios = withScrollAnimation(Testimonios);
+const AnimatedTitulo = withScrollAnimation(Titulo);
+const AnimatedVisitanos = withScrollAnimation(Visitanos);
+const AnimatedBannerCorreos = withScrollAnimation(BannerCorreos);
 
 const Welcome = () => {
+
+  const cardVariants = {
+    rest: {
+      scale: 1,
+      backgroundColor: "#fff",
+    },
+    hovered: {
+      scale: 1.05,
+      backgroundColor: "#f5f5f5",
+    },
+  };
+
+  const buttonVariants = {
+    rest: {
+      scale: 1,
+      backgroundColor: "#085423", // Este es un color verde ejemplo, reemplaza con el color inicial de tu botón si es diferente.
+    },
+    hovered: {
+      scale: 1.1,
+      backgroundColor: "#47621F",
+    },
+  };
+  
 
   document.addEventListener('DOMContentLoaded', () => {
     const imageContainers = document.querySelectorAll('.image-container');
@@ -51,7 +87,7 @@ const Welcome = () => {
         <h3 className='homeSubtitle'>Servicios y productos</h3>
         <div className="columnas">
           <div className="columna">
-            <img src={icono1} alt="Icono 1" />
+            <img src={icono1} alt="Icono 1"/>
             <p className='mainProducts'>Cenizarios en propiedad</p>
           </div>
           <div className="columna">
@@ -75,17 +111,31 @@ const Welcome = () => {
     <div className='productsContainer'>
     
     <div className="cards-container">
-      
-        <div className="card">
-            <div className="image-container">
-                <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/IMG_3595-scaled.jpeg" alt="Imagen de ejemplo"/>
-                <div className="overlay">
-                    <h3 className="title title-inside hidden"></h3>
-                </div>
-            </div>
-            <h3 className="homeSubtitle">Cenizarios en Capilla</h3>
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}> 
+    <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
+      <div className="image-container">
+        <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/IMG_3595-scaled.jpeg" alt="Imagen de ejemplo"/>
+        <div className="overlay">
+          <h3 className="title title-inside hidden"></h3>
         </div>
-        <div className="card">
+      </div>
+      <h3 className="homeSubtitle">Cenizarios en Capilla</h3>
+    </motion.div>
+    </Link>
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}> 
+    <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
             <div className="image-container">
                 <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/IMG_5375-scaled.jpg" alt="Imagen de ejemplo"/>
                 <div className="overlay">
@@ -93,8 +143,16 @@ const Welcome = () => {
                 </div>
             </div>
             <h3 className="homeSubtitle">Cenizarios en Muro</h3>
-        </div>
-        <div className="card">
+       </motion.div>
+    </Link>
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}>     
+      <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
             <div className="image-container">
                 <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/osarios-modulo-preferencial.jpg" alt="Imagen de ejemplo"/>
                 <div className="overlay">
@@ -102,8 +160,16 @@ const Welcome = () => {
                 </div>
             </div>
             <h3 className="homeSubtitle">Osarios en Muro</h3>
-        </div>
-        <div className="card">
+    </motion.div>
+    </Link>   
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}> 
+    <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
             <div className="image-container">
                 <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/arbol-cnz-camino-scaled.jpg" alt="Imagen de ejemplo"/>
                 <div className="overlay">
@@ -111,17 +177,33 @@ const Welcome = () => {
                 </div>
             </div>
             <h3 className="homeSubtitle">Cenizarios en Tierra</h3>
-        </div>
-        <div className="card">
-            <div className="image-container">
+      </motion.div>
+    </Link>
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}> 
+    <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
+        <div className="image-container">
                 <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/arbol-cenizario.jpg" alt="Imagen de ejemplo"/>
                 <div className="overlay">
                     <h3 className="title title-inside hidden">Título de ejemplo</h3>
                 </div>
             </div>
             <h3 className="homeSubtitle">Arbol Cenizario</h3>
-        </div>
-        <div className="card">
+    </motion.div>
+    </Link>
+
+    <Link to="/productos" style={{ textDecoration: 'none' }}> 
+    <motion.div
+      className="card"
+      initial="rest"
+      whileHover="hovered"
+      variants={cardVariants}
+    >
             <div className="image-container">
                 <img className='productImg' src="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/lotes-prop-scaled.jpg" alt="Imagen de ejemplo"/>
                 <div className="overlay">
@@ -129,13 +211,25 @@ const Welcome = () => {
                 </div>
             </div>
             <h3 className="homeSubtitle">Lotes en Propiedad</h3>
-        </div>
+    </motion.div>
+    </Link>
         
         </div>
       </div>
+
+      <Link to="/productos" style={{ textDecoration: 'none' }}> 
       <div className="cards-container">
-          <button className='greenButton'>Ver todos los productos</button>
-      </div>
+      <motion.button
+        className="greenButton"
+        variants={buttonVariants}
+        initial="rest"
+        whileHover="hovered"
+      >
+        Ver todos los productos
+      </motion.button>
+    </div>
+
+    </Link>
 
       <div>
       <h1 className='genericTtitle'>SERVICIOS</h1>
@@ -144,16 +238,28 @@ const Welcome = () => {
     </div>
 
       <div className='acordionContainer'>
-      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/Previcionexequial.jpg" texto="Previsión exequial" />
-      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/Servicios-funerarios.jpg" texto="Servicio funerario" />
-      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/paraiso4-scaled.jpg" texto="Soluciones integrales" />
-      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/cremacion.jpg" texto="Servicio de cremación" />
-      </div>
-      <div className="cards-container">
-          <button className='greenButton'>Ver todos los productos</button>
+      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/Previcionexequial.jpg" texto="Previsión exequial" vinculo="https://s.kbe.ai/s/JY3RW" />
+      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/Servicios-funerarios.jpg" texto="Servicio funerario" vinculo="https://s.kbe.ai/s/RPME9"/>
+      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/06/paraiso4-scaled.jpg" texto="Soluciones integrales" vinculo="https://s.kbe.ai/s/6N8XE"/>
+      <ImageAccordion imagen="https://elparaisoparquecementerio.com.co/wp-content/uploads/2023/03/cremacion.jpg" texto="Servicio de cremación" vinculo="https://s.kbe.ai/s/4DPB2"/>
       </div>
 
-      <div>
+      <Link to="/servicios" style={{ textDecoration: 'none' }}> 
+      <div className="cards-container">
+      <motion.button
+        className="greenButton"
+        variants={buttonVariants}
+        initial="rest"
+        whileHover="hovered"
+      >
+        Ver todos los servicios
+      </motion.button>
+    </div>
+    </Link>
+
+    
+
+      {/*<div>
       <h1 className='genericTtitle'>EVENTOS Y MISAS</h1>
       <p className='genericSubtitle'>Puedes consultar nuestros eventos y misas especiales</p>
       <hr class="gradient"/>
@@ -165,16 +271,16 @@ const Welcome = () => {
       </div>
 
       <div className='calendar-container'>
-      <CalendarGeneral></CalendarGeneral>
-      </div>
+      { <CalendarGeneral></CalendarGeneral> }
+      </div>*/}
 
-      <Obituarios></Obituarios>
-      <Misas></Misas>
-      <QuienesSomos></QuienesSomos>
-      <Titulo texto="Testimonios" />
-      <Testimonios></Testimonios>
-      <Visitanos></Visitanos>
-      <BannerCorreos></BannerCorreos>
+      <AnimatedObituarios/>
+      <ServiciosDia/>
+      <AnimatedQuienesSomos/>
+      <AnimatedTitulo texto="Testimonios" />
+      <AnimatedTestimonios/>
+      <AnimatedVisitanos/>
+      <AnimatedBannerCorreos/>
 
     
     </Fragment>
@@ -182,3 +288,4 @@ const Welcome = () => {
 };
 
 export default Welcome;
+

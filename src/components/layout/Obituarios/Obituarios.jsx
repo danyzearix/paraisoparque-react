@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Fragment } from 'react'
 import "./Obituarios.css"
 import { DateTime } from 'luxon';
+import { Link } from 'react-router-dom';
 
 const Obituarios = () => {
 
@@ -62,9 +63,12 @@ return (
       </div>
     </div>
 
-    <div className="cards-container">
+    <Link to="/ObituariosGenerales"> <div className="cards-container">
       <button className='greenButton'>Ver todos</button>
     </div>
+    </Link>
+    
+
   </Fragment>
 )
 

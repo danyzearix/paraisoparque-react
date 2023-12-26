@@ -18,10 +18,7 @@ const QuienesSomos = () => {
       ></iframe> 
         </div>
 
-        <div className="cards-container">
-          <button className='greenButton'>Ver más</button>
-      </div>
-
+      <h1 className='genericTtitle'>GALERÍA</h1>
       <div className="galeria-container"> {/* Agregamos la clase CSS al contenedor */}
       <div className="grid-containerDos">
         <div className="grid-itemDos"><img src="https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/galeria4_2.webp" alt="" srcset="" /></div>

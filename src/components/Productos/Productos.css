@@ -1,5 +1,6 @@
 .productos {
-    
+    display: flex;
+    flex-direction: column;
     text-align: center;
   }
   
@@ -32,10 +33,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 90%;
     width: 100%;
     gap: 50px; /* Espacio entre los elementos */
-    margin: 10% 0
+    margin: 5% 0
   }
   
   .text-section {
@@ -126,3 +127,25 @@
   scale: 1.05;
  }
   
+
+ @media screen and (max-width: 768px) {
+
+  .productos-content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    gap: 10px; /* Espacio entre los elementos */
+    margin: 10% 0
+  }
+
+  .productosButton{
+    margin: 8% 0;
+  }
+ 
+  .title_Productos{
+    text-align: center;
+  }
+
+ }

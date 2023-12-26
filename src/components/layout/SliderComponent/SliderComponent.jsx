@@ -11,22 +11,22 @@ const SliderComponent = ({ slides }) => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 3300,
     centerMode: true,
     centerPadding: '0px'
   };
 
-  const Slide = ({ image, title, subtitle, button }) => {
+  const Slide = ({ image, title, subtitle, button, url }) => {
     return (
       <div className="slide">
         <img src={image} alt={title} />
         <h1>{title}</h1>
         <p>{subtitle}</p>
-        <button>{button}</button>
+        <a href={url} target="_blank" rel="noopener noreferrer"><button>{button}</button></a>
       </div>
     );
   };
@@ -40,6 +40,7 @@ const SliderComponent = ({ slides }) => {
           title={slide.title}
           subtitle={slide.subtitle}
           button={slide.button}
+          url={slide.url}
         />
       ))}
     </Slider>

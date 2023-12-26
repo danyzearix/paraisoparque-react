@@ -1,98 +1,106 @@
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import connectDB from './config/mongoConfig.js';
+import obituariosRoutes from "./routes/obituariosRoutes.js"
+import uploadRoutes from "./routes/uploadRoutes.js"
 
+//Middlewares
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//Llamar funcion que conecta a la DB 
+connectDB();
+
 // Permitir solicitudes desde cualquier origen
 app.use(cors());
-
 // O permitir solicitudes solo desde el origen específico donde se encuentra tu aplicación React
-app.use(cors({ origin: 'http://localhost:5173' }));
-
+app.use(cors({ origin: 'https://www.elparaisoparquecementerio.com/' }));
 // Parsear el cuerpo de las solicitudes a JSON
 app.use(bodyParser.json());
 
-// Agregar el middleware de autenticación para verificar si el usuario es administrador
-// function isAdmin(req, res, next) {
-//     if (req.user && req.user.isAdmin) {
-//       next();
-//     } else {
-//       res.status(403).json({ error: 'Acceso denegado. No eres administrador.' });
-//     }
-//   }
+//Rutas 
+app.use("/api/obituarios", obituariosRoutes)
+app.use("/api", uploadRoutes);
 
-// URL de conexión a MongoDB Atlas
-const MONGODB_URI = 'mongodb+srv://danydev26:i5LrJCVywJZxWbHT@paraisoapp.pjl0nxt.mongodb.net/?retryWrites=true&w=majority';
-
-// Conectar a la base de datos MongoDB Atlas
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => {
-    console.log('Conexión a MongoDB Atlas establecida');
-  })
-  .catch((err) => {
-    console.error('Error al conectar a MongoDB Atlas:', err);
-  });
-
-// Definir el esquema de datos
-const datoSchema = new mongoose.Schema({
-    nombre: {
-        type: String,
-        set: (value) => {
-          // Aplicar formato a la primera letra de cada palabra en mayúsculas
-          return value
-            .split(' ')
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
-        },
-        required: true,
-      },
-  velacion: String,
-  exequias: String,
-  hora: String,
-  destino_final: String,
-  fecha: Date,
-});
-
-// Crear el modelo basado en el esquema
-const Dato = mongoose.model('Dato', datoSchema);
-
-// Agregar la siguiente ruta GET para obtener todos los datos
-app.get('/datos', async (req, res) => {
-    try {
-      const datos = await Dato.find();
-      res.status(200).json(datos);
-    } catch (error) {
-      res.status(500).json({ error: 'Error al obtener los datos' });
-    }
-  });
-
-// Ruta protegida para guardar los obituarios
-app.post('/admin/obituarios', async (req, res) => {
-    try {
-      const nuevoDato = new Dato(req.body);
-      await nuevoDato.save();
-      res.status(201).json(nuevoDato);
-    } catch (error) {
-      res.status(500).json({ error: 'Error al guardar el obituario' });
-    }
-  });
-
-// Ruta para guardar un nuevo dato
-app.post('/datos', async (req, res) => {
+//Ruta de registro
+app.post('/register', async (req, res) => {
   try {
-    const nuevoDato = new Dato(req.body);
-    await nuevoDato.save();
-    res.status(201).json(nuevoDato);
+    const { nombre, email, password } = req.body;
+    console.log(req.body)
+
+    // Verificar si el usuario ya existe
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).send('El usuario ya existe');
+    }
+
+    console.log('Password:', password);
+
+    // Hashear la contraseña
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+  
+    // Crear un nuevo usuario
+    const user = new User({
+      nombre,
+      email,
+      password: hashedPassword
+    });
+
+    // Guardar el usuario en la base de datos
+    await user.save();
+
+    res.status(201).send('Usuario registrado con éxito');
   } catch (error) {
-    res.status(500).json({ error: 'Error al guardar el dato' });
+    console.error('Error detalle:', error);
+    res.status(500).send('Error en el servidor');
   }
 });
+
+//Ruta de login 
+app.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    // Buscar al usuario por email
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).send('Credenciales no válidas');
+    }
+
+    // Verificar la contraseña
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(400).send('Credenciales no válidas');
+    }
+
+    // Crear y enviar el token
+    const token = jwt.sign({ _id: user._id }, 'tu_secreto', { expiresIn: '1h' });
+    res.header('auth-token', token).send(token);
+  } catch (error) {
+    res.status(500).send('Error en el servidor');
+  }
+});
+
+//Middleware para verificar token 
+function verifyToken(req, res, next) {
+  const token = req.header('auth-token');
+  if (!token) return res.status(401).send('Acceso denegado');
+
+  try {
+    const verified = jwt.verify(token, 'tu_secreto');
+    req.user = verified;
+    next();
+  } catch (error) {
+    res.status(400).send('Token inválido');
+  }
+}
+
+app.use('/FormularioObituarios', verifyToken);
+
 
 // Iniciar el servidor
 app.listen(PORT, () => {

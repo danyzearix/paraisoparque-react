@@ -11,20 +11,20 @@ const Footer = () => {
         <img src={logo} alt="Logo" className="logo" />
         <p className="footer-text">Somos el primer parque cementerio ubicado al noroccidente de Bogotá</p>
         <div className="social-icons">
-          <a href="#" className="social-icon"><FaFacebook /></a>
-          <a href="#" className="social-icon"><FaInstagram /></a>
-          <a href="#" className="social-icon"><FaYoutube /></a>
-          <a href="#" className="social-icon"><FaWhatsapp /></a>
+          <a href="https://www.facebook.com/profile.php?id=100094354212462" className="social-icon"><FaFacebook /></a>
+          <a href="https://www.instagram.com/elparaisoparquecementerio/?hl=es" className="social-icon"><FaInstagram /></a>
+          <a href="https://www.youtube.com/@ELPARAISOPARQUECEMENTERIO" className="social-icon"><FaYoutube /></a>
+          <a href="https://wa.link/ol413d" className="social-icon"><FaWhatsapp /></a>
         </div>
       </div>
       <div className="footer-column">
         <h3 className="footer-subtitulo">Links de interés</h3>
         <ul className="footer-links">
-          <li><a href="#"><AiOutlineHome /> Inicio</a></li>
-          <li><a href="#"><AiOutlineFileText /> Productos</a></li>
-          <li><a href="#"><AiOutlineDollarCircle /> Servicios</a></li>
-          <li><a href="#"><AiOutlineRead /> Obituarios</a></li>
-          <li><a href="#"><AiOutlineCompass /> Misas y Reservas</a></li>
+          <li><a href="https://elparaisoparquecementerio.com/"><AiOutlineHome /> Inicio</a></li>
+          <li><a href="https://elparaisoparquecementerio.com/productos"><AiOutlineFileText /> Productos</a></li>
+          <li><a href="https://elparaisoparquecementerio.com/servicios"><AiOutlineDollarCircle /> Servicios</a></li>
+          <li><a href="https://elparaisoparquecementerio.com/ObituariosGenerales"><AiOutlineRead /> Obituarios</a></li>
+          <li><a href="https://paraisocementerio.a2hosted.com/misas-y-eventos/"><AiOutlineCompass /> Misas y Reservas</a></li>
           <li><a href="#"><AiOutlineMail /> Contáctanos</a></li>
         </ul>
       </div>

@@ -2,6 +2,7 @@
 
 .testimonios-container {
     display: flex;
+    flex-direction: row-reverse;
     width: 80%;
     margin: 0 auto;
     margin-bottom: 10%;
@@ -15,7 +16,7 @@
     padding: 20px;
     border-radius: 10px 0 0 10px;
     background-color: #f1f1f1;
-    background-image: url('https://paraisocementerio.a2hosted.com/wp-content/uploads/2023/08/testimonos.jpg'); /* Cambia la ruta de la imagen de fondo */
+    background-image: url('https://elparaisoparquecementerio.com.co/wp-content/uploads/elementor/thumbs/Diseno-sin-titulo-25-1-pumv94n96kymm7xwgkpthkx8y671773q90z7j9y1qw.jpg'); /* Cambia la ruta de la imagen de fondo */
     background-size: cover;
     background-position: center;
   }
@@ -79,4 +80,17 @@
 .cliente{
     color: #6FC1E4;
     font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  /* ... Tus otros estilos para el media query ... */
+
+.testimonios-container{
+  flex-direction: column;
+}
+
+.columna-izquierda{
+  padding: 50%;
+}
+
 }

@@ -64,3 +64,16 @@
     margin-right: 8px;
   }
   
+
+  @media screen and (max-width: 768px) {
+    /* ... Tus otros estilos para el media query ... */
+    .footer-container{
+      flex-direction: column;
+    }
+
+    .logo{
+      width: 80%;
+      height: auto;
+      
+    }
+  }
