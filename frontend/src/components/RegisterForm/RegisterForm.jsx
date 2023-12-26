@@ -13,7 +13,7 @@ const RegisterForm = () => {
     setError('');
 
     try {
-      await axios.post('http://localhost:3000/register', {
+      await axios.post('https://paraisoparque-react-dev-arte.3.us-1.fl0.io/register', {
         nombre,
         email,
         password,
