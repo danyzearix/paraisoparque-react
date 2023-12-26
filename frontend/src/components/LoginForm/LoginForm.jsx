@@ -13,7 +13,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     setError('');
 
     try {
-      const response = await axios.post('https://paraiso-api-dev-jajx.1.us-1.fl0.io/login', {
+      const response = await axios.post('https://paraiso-api-dev-jajx.1.us-1.fl0.io/api/usuarios/login', {
         email,
         password,
       });
