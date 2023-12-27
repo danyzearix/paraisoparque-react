@@ -1,4 +1,4 @@
-import Usuarios from "../models/userSchema.js";
+import Usuarios from "../models/usersSchema.js";
 import bcrypt from "bcrypt";
 
 const registrarUsuarios = async (req, res) => {
