@@ -1,14 +1,15 @@
-import Usuarios from "../models/usersSchema.js";
+import Usuarios from "../models/userSchema.js";
+import bcrypt from "bcrypt";
 
 const registrarUsuarios = async (req, res) => {
     try {
         const { nombre, email, password } = req.body;
-        console.log(req.body)
+        console.log(req.body);
     
         // Verificar si el usuario ya existe
         const existingUser = await Usuarios.findOne({ email });
         if (existingUser) {
-          return res.status(400).send('El usuario ya existe');
+          return res.status(400).json({ message: 'El usuario ya existe' });
         }
     
         console.log('Password:', password);
@@ -16,9 +17,8 @@ const registrarUsuarios = async (req, res) => {
         // Hashear la contraseña
         const hashedPassword = await bcrypt.hash(password, 12);
     
-      
         // Crear un nuevo usuario
-        const usuario = new Usuario({
+        const usuario = new Usuarios({
           nombre,
           email,
           password: hashedPassword
@@ -27,13 +27,15 @@ const registrarUsuarios = async (req, res) => {
         // Guardar el usuario en la base de datos
         await usuario.save();
     
-        res.status(201).send('Usuario registrado con éxito');
+        res.status(201).json({ message: 'Usuario registrado con éxito' });
       } catch (error) {
         console.error('Error detalle:', error);
-        res.status(500).send('Error en el servidor');
+        res.status(500).json({ message: 'Error en el servidor' });
       }
-    
 };
+
+export default registrarUsuarios;
+
 
 const loginUsuarios = async(req, res) => {
     try {

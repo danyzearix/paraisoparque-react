@@ -13,7 +13,7 @@ const RegisterForm = () => {
     setError('');
 
     try {
-      await axios.post('https://paraiso-api-dev-jajx.1.us-1.fl0.io/register', {
+      await axios.post('https://paraiso-api-dev-jajx.1.us-1.fl0.io/api/usuarios/registro', {
         nombre,
         email,
         password,
