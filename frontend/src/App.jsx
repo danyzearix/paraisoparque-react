@@ -14,6 +14,7 @@ import ObituariosGenerales from './components/ObituariosGenerales/ObituariosGene
 import Footer from './components/layout/Footer/Footer';
 import LoginForm from './components/LoginForm/LoginForm';
 import RegisterForm from './components/RegisterForm/RegisterForm';
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 
 
 const slides = [
@@ -53,29 +54,29 @@ function App() {
 
   return (
     <Router>
-      <Header/>
-      <NavBar/>
-      <Routes>
-        <Route path="/" element={<Home slides={slides}/>} />
-        <Route path="/productos" element={<Productos/>} />
-        <Route path="/servicios" element={<Servicios/>} />
-        <Route path="/login" element={<LoginForm/>} />
-        <Route path="/register" element={<RegisterForm/>} />
-        <Route 
-          path="/FormularioObituarios" 
-          element={
-            <Auth>
-              <FormularioObituarios />
-            </Auth>
-          } 
-        />
+  {/* Renderiza Header y NavBar solo si la ruta no es /adminpanel, /login ni /register */}
+  {location.pathname !== '/adminpanel' && location.pathname !== '/login' && location.pathname !== '/register' && (
+    <>
+      <Header />
+      <NavBar />
+    </>
+  )}
 
-        <Route path="/" element={<Navigate replace to="/login" />} />
-        <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
+  <Routes>
+    <Route path="/" element={<Home slides={slides}/>} />
+    <Route path="/productos" element={<Productos/>} />
+    <Route path="/servicios" element={<Servicios/>} />
+    <Route path="/login" element={<LoginForm/>} />
+    <Route path="/register" element={<RegisterForm/>} />
+    <Route path="/adminpanel" element={<AdminPanel/>} />
+    <Route path="/FormularioObituarios" element={<Auth><FormularioObituarios /></Auth>} />
+    <Route path="/" element={<Navigate replace to="/login" />} />
+    <Route path="/ObituariosGenerales" element={<ObituariosGenerales/>} />
+  </Routes>
 
-      </Routes>
-      <Footer></Footer>
-    </Router>
+  {/* Renderiza el Footer solo si la ruta no es /adminpanel, /FormularioObituarios, /login ni /register */}
+  {location.pathname !== '/adminpanel' && location.pathname !== '/FormularioObituarios' && location.pathname !== '/login' && location.pathname !== '/register' && <Footer />}
+</Router>
   )
 }
 
