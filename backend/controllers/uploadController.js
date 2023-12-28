@@ -36,9 +36,14 @@ const uploadFile = async (req, res) => {
 
     res.send('Archivo procesado y datos guardados');
   } catch (error) {
-    console.error('Error al procesar el archivo:', error);
-    res.status(500).send('Error al procesar el archivo');
-  }
-};
+    console.error('Error al procesar o guardar el archivo:', error);
+    // Puedes verificar el tipo de error y proporcionar una respuesta específica
+    if (error instanceof mongoose.Error.ValidationError) {
+      // Si es un error de validación de Mongoose
+      res.status(400).json({ error: 'Error de validación en el obituario', details: error.errors });
+    } else {
+      res.status(500).json({ error: 'Error en el servidor al procesar el archivo' });
+    }
+  }};
 
 export default uploadFile;

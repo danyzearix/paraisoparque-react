@@ -25,6 +25,9 @@ app.use(cors({
 // Parsear el cuerpo de las solicitudes a JSON
 app.use(bodyParser.json());
 
+//Usar carpeta public
+app.use( express.static("public"));
+
 //Rutas 
 app.use("/api/obituarios", obituariosRoutes)
 app.use("/api", uploadRoutes);

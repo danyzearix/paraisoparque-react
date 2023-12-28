@@ -51,7 +51,7 @@ const UploadFiles = () => {
 
   return (
     <div>
-      <input type="file" onChange={handleFileSelect} accept=".xlsx" />
+      <input type="file" onChange={handleFileSelect} accept=".xlsx" name="file" />
       <button className="margin-up" onClick={handleFileUpload}>Subir Archivo</button>
     </div>
   );
